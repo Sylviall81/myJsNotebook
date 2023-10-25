@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4-EXTRA1.Calcula si los números son múltiplos o no.</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>El juego de los Múltiplos</h1>
+
+    <p> Por favor, introduce dos números enteros siguiendo las instrucciones:
+        <br>
+        <br>
+        El Número 1 será el dividendo y el Número 2 sera el divisor. <br>
+        El divisor puede ser cualquier número entre el 2 y el 7 (ambos incluidos).<br>
+        Al presionar el botón el programa te dirá si el dividendo es múltiplo del divisor o no.</p>
+
+    <p>Numero 1 o Dividendo: <input id="dividendo" type="number" placeholder="Introduce un número"> </p>
+    <p>Numero 2 o Divisor: <input id="divisor" type="number" placeholder="Introduce un número del 2 al 7"> </p>
+
+    <button onclick="calculoMultiplo()">¿Son múltiplos?</button>
+    <p id="resultadoMultiplo"></p>
+
+    <script>
+        "use strict"
+        function calculoMultiplo() {
+
+            let vDividendo = parseInt(document.getElementById("dividendo").value)
+            console.log("vDividendo: " + vDividendo);
+            let vDivisor = parseInt(document.getElementById("divisor").value)
+            console.log("vDivisor: " + vDivisor);
+            console.log("Numero 1 % Numero 2: " + vDividendo % vDivisor);
+            let pPrint = document.getElementById("resultadoMultiplo")
+            let vResultado = vDividendo % vDivisor
+
+            if ((vDivisor < 2) || (vDivisor > 7)) {
+                alert("ERROR. El Número 2 o divisor no debe ser menor de 2 o mayor de 7");
+            } else if (vResultado == 0) {
+                pPrint.innerHTML = vDividendo + " es múltiplo de " + vDivisor; 
+            } else {
+                pPrint.innerHTML = vDividendo + " NO es múltiplo de " + vDivisor;
+            }
+        }
+    </script>
+</body>
+
+</html>

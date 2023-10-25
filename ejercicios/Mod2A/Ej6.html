@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7.1.Ejercicio 3: ¿Es Par o Impar?</title>
+</head>
+<body>
+    <h1> Pares o Impares</h1>
+
+    <p>Inserta un número y el programa te dirá si se trata de un número par o impar</p>
+    <p> <input type="number" id="num1"></p>
+
+    <button onclick="calcular()">¿Es Par o Impar?</button>
+
+    <p id="respuesta"> </p>
+
+    <script>
+
+function calcular(){
+
+    let vNumero1 = Number(document.getElementById("num1").value);
+    let vMensaje = " ";
+    let vFormula = (vNumero1 % 2);
+    console.log ("vNumero1: "+vNumero1 + " vFormula: "+vFormula)
+
+    vMensaje = (vFormula == 0) ? "El numero es PAR" : "El número es IMPAR";
+    document.getElementById("respuesta").innerHTML = vMensaje;  
+
+    /* 1er approach: if (vFormula == 0){
+       vMensaje= "PAR"
+    } else { vMensaje = "IMPAR"}
+    Aproach eficaz: Ternario */
+}
+
+    </script>
+</body>
+</html>

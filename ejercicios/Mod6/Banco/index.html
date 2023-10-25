@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: darkred;">M.8.2| Ej.3 Programa para crear cuentas de clientes.</title>
+</head>
+
+<body
+    style="background-color: lightgrey; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <h1 style="color: darkblue;">(M8.2) Ejercicio 3. Programa para crear cuentas de clientes.</h1>
+
+    <details>
+        <summary>Ej.3 Instrucciones:</summary>
+
+        <p> Dado el diagrama de clases de la siguiente imagen:</p>
+
+        <img src="img/Diagrama.png" alt="Diagrama Instrucciones">
+
+        <p>
+            Programa una aplicación que tenga 5 botones:
+
+            <ol>
+                <li> Crear cliente/a. </li>
+                <li> Eliminar cliente/a.
+                <li>Crear cuenta de un cliente/a.</li>
+                <li> Ingresar euros en una cuenta de un cliente/a. </li>
+                <li>Retirar euros en una cuenta de un cliente/a. </li>
+            </ol>
+            <br>
+            <strong> Info adicional: </strong><br>
+            <ul>
+                <li>El saldo inicial de todas las cuentas debe ser 0€.</li>
+                <li>Al crear un cliente, no tendrá que tener ninguna cuenta “asociada”.</li>
+                <li> El diagrama UML muestra las propiedades y métodos mínimos que deben tener las clases, pero puedes
+                    crear más si es necesario.</li>
+            </ul>
+
+        </p>
+    </details>
+    <center>
+        <h3 style="color: darkblue;">Bienvenid@ a SuBancaOnline</h3>
+        <p> Somos la banca Online mas solida y fiable para tus ahorros e inversiones.<br>
+            Trabajamos cada día para brindarte los mejores beneficios y la mayor
+            transparencia. <br>
+            <strong> Gracias por confiar en SuBancaOnline!</strong>
+        </p>
+    </center>
+    <center> <img width="450" src="img/Banco.png" alt="Imagenes de Banca y finanzas online.">
+    </center>
+
+    <p>Por favor, inserta el Num. de identificación (DNI, NIF, NIE etc..) del cliente <br>
+        y luego, presiona el botón para añadirlo, eliminarlo o simplemente consultar su información </p>
+
+    <p> Num. de Identidad: <input id="idUsuario" size="20" type="text" placeholder="71365220z">
+        <!-- <button onclick="busquedaPrevia()">Continuar</button>-->
+    </p>
+
+    <button onclick="añadirCliente()">Añadir Cliente</button>
+    <button onclick="verCliente()"> Mostrar Cliente</button>
+    <button onclick="eliminarCliente()">Eliminar Cliente </button>
+
+
+    <p style="background-color: darkblue;"> <strong style="color: gainsboro;">DATOS DEL CLIENTE</strong></p>
+    <p id="respuesta"></p>
+    <p>Num. Identidad:<span id="showId"> </span></p>
+    <p>Nombre: <span id="showName"> </p>
+    <p>Apellidos: <span id="showLastname"></span> </p>
+    <br>
+
+
+    <button onclick="crearCuenta()">Crear cuenta</button>
+    <button onclick="mostrarCuentas()"> Mostrar Cuentas</button>
+
+
+    <p id="showAccount"></p>
+
+
+    <button onclick="superClean(2)"> Limpiar Datos de Cuenta </button> <button onclick="superClean(1)"> Limpiar Datos
+        Cliente</button>
+    <!---<p> Nombre: <input id="nombreUsuario" type="text" placeholder="Guillem"> </p>
+    <p> Apellidos: <input id="apellidoUsuario" type="text" placeholder="López"> </p>
+    </p>
+
+    -->
+
+
+    <p style="background-color: darkblue;"> <strong style="color: gainsboro;">OPERACIONES DE CLIENTE</strong></p>
+
+    <p> No. de cuenta: <input id="nCuenta" type="text" placeholder="0261-987654321-000"> </p>
+
+    <button onclick="depositarDinero()">Ingreso en Cuenta Cliente</button>
+    <button onclick="retirarDinero()"> Retiro en Cuenta Cliente </button>
+    <button onclick="mostrarCuentas()"> Actualizar Info </button>
+
+
+    <p id="infoCuentas"></p>
+
+
+    <br>
+    <button onclick="superClean(3)"> Limpiar Operaciones de cliente</button>
+    <p style="background-color: darkblue;"> <strong style="color: gainsboro;">Reiniciar</strong></p>
+
+    <button onclick="superClean()"> Reset</button>
+    <!--
+    <button onclick="cleanInput()"> Borrar Campos</button>-->
+    <br>
+
+
+
+    <script>
+        "use strict"
+    </script>
+    <script src="js/cliente.js"></script>
+    <script src="js/cuenta.js"></script>
+    <script src="js/clientesdb.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

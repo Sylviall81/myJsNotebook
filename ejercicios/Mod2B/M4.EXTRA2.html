@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4.EXTRA 2. Traductor de números</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>Number Translate</h1>
+
+    <p>Instrucciones: Ingresa un número entero comprendido entre 0 y 99 y el programa te lo mostrará en letras. </p>
+
+    <p>Número: <input type="number" id="num" min="0" max="99"></p>
+
+    <button onclick="numberTranslate()">Ver como texto</button>
+
+
+    <p id="resultado"></p>
+
+    <script>
+        "use strict"
+
+        function numberTranslate() {
+            let vNum = parseInt(document.getElementById("num").value);
+            console.log(vNum);
+            document.getElementById("resultado").innerHTML = " ";
+
+            let vUnit = vNum % 10;
+            let vDec = parseInt(vNum - vUnit) / 10;
+
+            let textoUni = " ";
+            let textoDec = " ";
+            let textoNum = " ";
+
+            let vResultado1 = " ";
+            let vResultado2 = " ";
+            let vResultado3 = " ";
+            let vResultado4 = " ";
+
+            console.log(" vNum: " + vNum + " vDec: " + vDec + " vUnit: " + vUnit);
+
+            if (vNum >= 11 && vNum <= 15) {
+                switch (vNum) {
+                    case 11:
+                        textoNum = " Once ";
+                        (textoNum);
+                        break;
+                    case 12:
+                        textoNum = " Doce ";
+                        (textoNum);
+                        break;
+                    case 13:
+                        textoNum = " Trece ";
+                        (textoNum)
+                        break;
+                    case 14:
+                        vResultado = " Catorce ";
+                        (textoNum)
+                        break;
+                    case 15:
+                        textoNum = " Quince ";
+                        console.log(textoNum)
+                        break;
+                        vResultado = textoNum;
+                        console.log(vResultado);
+                        document.getElementById("resultado").innerHTML = vResultado
+                }
+            } else {
+                switch (vDec) {
+                    case 1:
+                        textoDec = " Diez ";
+                        console.log(textoDec)
+                        break;
+                    case 2:
+                        textoDec = " Veinte ";
+                        console.log(textoDec)
+                        break;
+                    case 3:
+                        textoDec = " Treinta ";
+                        console.log(textoDec);
+                        break;
+                    case 4:
+                        textoDec = " Cuarenta ";
+                        console.log(textoDec)
+                        break;
+                    case 5:
+                        textoDec = " Cincuenta ";
+                        console.log(textoDec)
+                        break;
+                    case 6:
+                        textoDec = " Sesenta ";
+                        console.log(textoDec)
+                        break;
+                    case 7:
+                        textoDec = " Setenta ";
+                        console.log(textoDec)
+                        break;
+                    case 8:
+                        textoDec = " Ochenta ";
+                        console.log(textoDec)
+                        break;
+                    case 9:
+                        textoDec = " Noventa ";
+                        console.log(textoDec)
+                        break;
+                        vResultado = textoDec + textoUni;
+                        document.getElementById("resultado").innerHTML = vResultado
+                } //Cierre Switch decenas
+
+                switch (vUnit) {
+                    case 0:
+                        textoUni = " Cero ";
+                        console.log(textoUni)
+                        break;
+                    case 1:
+                        textoUni = " Uno ";
+                        console.log(textoUni)
+                        break;
+                    case 2:
+                        textoUni = " Dos ";
+                        console.log(textoUni)
+                        break;
+                    case 3:
+                        textoUni = " Tres ";
+                        console.log(textoUni)
+                        break;
+                    case 4:
+                        textoUni = " Cuatro ";
+                        console.log(textoUni);
+                        break;
+                    case 5:
+                        textoUni = " Cinco ";
+                        console.log(textoUni)
+                        break;
+                    case 6:
+                        textoUni = " Seis ";
+                        console.log(textoUni)
+                        break;
+                    case 7:
+                        textoUni = " Siete ";
+                        console.log(textoUni)
+                        break;
+                    case 8:
+                        textoUni = " Ocho ";
+                        console.log(textoUni)
+                        break;
+                    case 9:
+                        textoUni = " Nueve ";
+                        console.log(textoUni)
+                        break;
+                        vResultado = textoUni;
+                        document.getElementById("resultado").innerHTML = vResultado
+                } //Cierre Switch unidades
+            }
+
+            vResultado1 = textoDec + " y " + textoUni;
+            vResultado2 = textoNum;
+            vResultado3 = textoUni;
+            vResultado4 = textoDec;
+
+            if (vNum < 0 || vNum > 99) {
+                document.getElementById("resultado").innerHTML =
+                    "Por favor, ingresa un número válido dentro del rango de 0 a 99";
+            }else if (vNum >= 11 && vNum <= 15) {
+                document.getElementById("resultado").innerHTML = vResultado2
+            } else if (vNum >= 1 && vNum <= 9) {
+                document.getElementById("resultado").innerHTML = vResultado3
+            } else if (vUnit == 0){
+                document.getElementById("resultado").innerHTML = vResultado4
+            } 
+            else {
+                document.getElementById("resultado").innerHTML = vResultado1
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

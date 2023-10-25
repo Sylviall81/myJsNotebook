@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7.Ejercicio 1. Calcula la Media</title>
+</head>
+
+<body>
+
+    <h1> Calcula la Media</h1>
+
+    <p>Ingresa 3 notas y el programa calculará tu media.</p>
+
+    <p> Nota 1:
+        <select id="nota1">
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+        </select>
+    </p>
+
+    <p>Nota 2:
+        <select id="nota2">
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+        </select>
+    </p>
+
+    <p>Nota 3: <select id="nota3">
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+        </select>
+    </p>
+
+    <button onclick="calculaMedia()">Calcula la Media </button>
+
+    <p id="resultado"> </p>
+
+    <script>
+        function calculaMedia() {
+            let vNota1 = Number(document.getElementById("nota1").value);
+            let vNota2 = Number(document.getElementById("nota2").value);
+            let vNota3 = Number(document.getElementById("nota3").value);
+            console.log("Nota1: " + vNota1 + " nota 2: " + vNota2 + " nota3: " + vNota3);
+            let vMedia = ((vNota1 + vNota2 + vNota3) / 3);
+            console.log((vMedia).toFixed(2));
+            let vMensaje = " "
+
+            if (vMedia < 5) {
+                vMensaje = "No has superado el curso. Tienes que recuperar";
+            } else if ((vMedia >= 5) && (vMedia <= 7)) {
+                vMensaje = "¡Enhorabuena! Has aprobado, pero deberías seguir practicando";
+            } else {
+                vMensaje = "¡Enhorabuena! ¡Has superado el curso! ¡Pasa ya al siguiente nivel!";
+            }
+            document.getElementById("resultado").innerHTML = "Tu media es de: " + vMedia.toFixed(2) + " " + vMensaje;
+        }
+    </script>
+</body>
+
+</html>

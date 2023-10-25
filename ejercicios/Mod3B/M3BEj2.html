@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.Ejercicio 4</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+
+<body>
+    <h1>(M5) Ejercicio 4. Adivina un número del 1 al 10 (solo 5 intentos).</h1>
+    <details> <summary>Instrucciones:</summary>
+
+        Tienes que modificar el programa anterior para añadir una nueva funcionalidad: establecer un número máximo de 5 intentos.
+Si el usuario acierta el número escogido por el programa antes de estos 5 intentos, el programa muestra el siguiente mensaje por pantalla: “Enhorabuena, el número es X y has necesitado N intentos para acertarlo” .
+Si no acierta el número antes de 5 intentos, el programa muestra por pantalla: “¡Has utilizado demasiados intentos! El número es X”.
+
+        </details>
+
+    <p>Vamos a jugar! </p>
+
+    <strong> Instrucciones:</strong> <br>
+
+    <p> El programa va a generar un número aleatorio entre el 1 y el 10 y tu debes adivinarlo <br>
+    pero SOLO tendrás 5 intentos!!
+    </p>
+
+    <button style="color: darkmagenta;" onclick=fAdivina()> <strong> EMPEZAR!</strong>
+    </button>
+    <p id="mensaje"></p>
+
+    <script>
+        "use strict"
+
+        function fAdivina() {
+
+            let numOrdenador = Math.ceil((Math.random() * 10));
+            console.log(numOrdenador);
+
+            let numUser = 0;
+            let i = 5; //intentos
+
+            while (numUser != numOrdenador && i > 0) {
+                numUser = prompt("Dime un número del 1 al 10. Este es tu intento No. " + i);
+                i--
+                console.log("numUser:" + numUser + " iteración:" + i)
+                if (numUser != numOrdenador) {
+                    alert("Vaya! No has adivinado intenta de nuevo..")
+                }
+            }
+
+            if (numUser == numOrdenador) {
+                document.getElementById("mensaje").innerHTML = " Felicidades has adivinado el número era: " +
+                    numOrdenador;
+            } else {
+                alert(" Vaya! Se te acabaron los intentos el número era: " + numOrdenador);
+            }
+        }
+
+        /*
+         document.getElementById("mensaje").innerHTML= "Enhorabuena, has acertado! "+
+         "<br>"+ "El número era: "+ numOrdenador+"<br>"+
+         " Espero que te haya gustado! Gracias por jugar conmigo " + ":D ";
+             //alert("Enhorabuena, has acertado! el número era: "+ numOrdenador+" Espero que te haya gustado! Gracias por jugar conmigo " + ":D ");
+             */
+    </script>
+</body>
+
+</html>

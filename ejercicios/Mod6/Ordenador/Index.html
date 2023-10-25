@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M8.2 Ejercio 1. Programa para crear Ordenadores</title>
+</head>
+<body style="background-color: lightgrey; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+>
+
+    <h1 style="color: darkred;">M.8.2 Ej.1. Programa para crear Ordenadores</h1>
+<details>
+    <summary> <strong> Ejercicio 6.3.Instrucciones:</strong> </summary>
+   
+    <p>Crea una clase en JavaScript llamada "Ordenador", en un archivo llamado ordenador.js. Esta clase tendrá los siguientes <br>
+       <strong> atributos: </strong>
+        <ul>
+            <li> marca</li>
+            <li> modelo </li>
+            <li> procesador </li>
+            <li>Memoria RAM</li>
+            <li>capacidad del disco duro</li>  
+    </ul>
+        
+        Además del constructor, debe disponer de los siguientes <br>
+        <strong> métodos:</strong>
+        <ul>
+            <li> Métodos que permitan consultar cada uno de los atributos (getters).</li>
+            <li> Métodos que permitan modificar el procesador, la cantidad de memoria RAM y la capacidad del disco duro. (setters).</li>
+            <li> Un método que recibirá un parámetro y devolverá una frase que diga:
+                "En estos momentos se está ejecutando: 'X'" (X es el parámetro recibido por el método y que normalmente será el nombre de un programa).
+                Ejemplo:  "En estos momentos se está ejecutando: Chrome" </li>
+            <li> Un método que devolverá una descripción completa del ordenador (toString()).</li>
+    </ul>
+   
+        En otro archivo llamado main.js, crea la función crear Ordenadores() .        
+        Dentro de esta función, pediremos al usuario mediante promtps los datos de dos ordenadores. 
+        Una vez introducidos los datos de ambos ordenadores, llama a los métodos de la clase Ordenador para comprobar que funcionan correctamente.
+
+    </p>
+</details>
+
+<br>
+<br>
+
+
+    <button onclick="crearOrdenador()">Añadir nuevo producto</button> <br>
+    <br>
+    <button onclick="modificarOrdenador()">Modificar características</button> <br>
+    <br>
+   
+    <p>Selecciona un ordenador: <select id="ordenadorId">
+        <option value= 0 >Ordenador 1</option>
+        <option value= 1 >Ordenador 2</option>
+        <option value= 2 >Ordenador 3</option>
+    </select></p>
+
+    <p>Haz click aquí para ver todos los detalles del producto:</p>
+    <br>
+    <button onclick= "ordenadorDetail()">Ver Producto</button> <br>
+    <p id="ordenadorInfo"></p>
+
+    <br>
+    <p>Haz click aquí para ver que programa esta ejecutando:</p>
+    <button onclick="ejecutarPrograma()"> Ejecutar Programa</button> <br>
+    
+
+    <script> "use strict"</script>
+    <script src= "js/ordenador.js"></script>
+    <script src= "js/catalogo.js"></script>
+    <script src= "js/main.js"></script>
+
+</body>
+</html>

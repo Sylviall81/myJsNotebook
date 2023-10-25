@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica;
+            margin: 0 auto;
+            padding: 0 15em 5em 5em;
+        }
+
+        h1 {
+            color: #106CF6;
+            font-size: 115%;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        span {
+            display: inline-block;
+            width: 15em;
+        }
+    </style>
+    <title>Ejercicio 2. Calculadora Arcaica</title>
+</head>
+
+<body>
+
+    <h1>Ejercicio 2. Calculadora Arcaica</h1>
+
+
+    <details>
+        <summary> <strong>Instrucciones:</strong> </summary>
+
+        <p>
+            Hacer un programa que le pida dos números enteros al usuario/a. Al final, el programa imprime por pantalla
+            el siguiente mensaje:
+            <ul>
+
+                <li>El resultado de la suma es: "valor"</li>
+                <li>El resultado de la resta es: "valor"</li>
+                <li>El resultado de la multiplicación es: "valor"</li>
+                <li>El resultado de la división es: "valor"</li>
+            </ul>
+
+        </p>
+
+    </details>
+    <br>
+
+
+    <h3>Por favor inserta dos números enteros y el programa te mostrará el resultado de su suma, su resta, su
+        multiplicacion y división:</h3>
+
+    <p>Número 1: <input type="number" id="num1"> </p>
+    <p>Número 2: <input type="number" id="num2"> </p>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p>Resultado:</p>
+
+    <h3 id="print-data"></h3>
+
+    <script>
+        'use strict';
+
+        function suma(a, b) {
+            return a + b;
+        };
+
+        function resta(a, b) {
+            return a - b;
+        };
+
+        function division(a, b) {
+            return a / b
+        };
+
+        function multiplicacion(a, b) {
+            return a * b;
+        }
+
+
+        function calcular() {
+            let vNum1 = parseInt(document.getElementById("num1").value);
+            let vNum2 = parseInt(document.getElementById("num2").value);
+            console.log("Num1: ", vNum1, " Num2: ", vNum2);
+
+            document.getElementById("print-data").innerHTML = `El resultado de la suma es ${suma(vNum1,vNum2)}
+            El resultado de la resta es ${resta(vNum1,vNum2)}, El resultado de la multiplicación es ${multiplicacion(vNum1,vNum2)},
+            El resultado de la division es ${division(vNum1,vNum2)}`
+
+        }
+
+
+       
+    </script>
+
+</body>
+
+</html>

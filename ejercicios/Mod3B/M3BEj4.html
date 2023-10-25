@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.Ejercicio 5 Becas(II)</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+<body>
+
+    <!---- Tienes que modificar el programa de las becas (ahora el programa sólo debe poder dar 5 becas).
+    El programa irá recabando los datos de los alumnos/as hasta que se den estas 5 becas. 
+    Una vez que el programa haya asignado las 5 becas se debe mostrar por pantalla los nombres 
+    de los/as 5 alumnos que tienen beca.--->
+
+    <h1>Language Academy</h1>
+    <h2>Bienvenid@ a nuestra Web</h2>
+    <br>
+    <p> En Language Academy ofrecemos 5 becas de estudio para nuestros cursos de idiomas.<br>
+        Estas becas estan dirigidas para alumnos que cumplan los siguientes requisitos: <br>
+         1. Quienes se encuentren en situación de paro.
+         2. Aquellos mayores de edad y en posesión de un título universitario
+        son elegibles para una beca.</p>
+    <h3> ¿Quieres saber si eres elegible para una de nuestras becas </h3>
+    <p>Ingresa tus datos y el programa te dará la respuesta: </p>
+    <br>
+    <!----
+    <p>Nombre: <input id="nombre" type="text" placeholder="Introduce tu nombre"></p>
+    <p> Edad: <input id="edad" type="number" placeholder="Introduce tu edad"></p>
+
+    <p>¿Tienes un título universitario? <select id="titulo">
+        <option value=1>Si</option>
+        <option value=0>No</option>
+    </select> </p>
+        
+    <p> ¿Te encuentras en paro actualmente?<select id="paro">
+        <option value=1>Si</option>
+        <option value=0>No</option>
+    </select>
+         </p>--->
+
+    <p id="resultado"> </p>
+
+    <button onclick=evaluarBeca()>¿Soy apto para una beca?</button>
+    
+
+    <script>
+"use strict"
+
+function evaluarBeca() {
+    
+    let intentos= 5;
+    let postulantes = [];
+
+    /*if (vTitulo != "s" && vTitulo != "S" && vTitulo != "n" && vTitulo != "N") {
+        alert("Error, por favor responde S o N para obtener un resultado")
+    }
+    if (vParo != "s" && vParo != "S" && vParo != "n" && vParo != "N") {
+        alert("Error, por favor responde S o N para obtener un resultado")
+    }*/
+
+  while (intentos > 0) {
+
+    let vNombre = prompt("Ingresa tu Nombre: ", "Nombre");
+    let vEdad = Number(prompt("Introduce tu edad: ",0));
+    let vTitulo = prompt("Tienes un título universitario", "Si/No");
+    let vParo = prompt("¿Te encuentras en el paro?", "Si/No");
+    
+    
+
+    console.log("vNombre:" + vNombre, "vEdad:" + vEdad, "vTitulo:" + vTitulo, "vParo:" +
+        vParo) //compruebo variables 
+
+    
+    
+    if (vParo == "Si") {
+        alert("Enhorabuena " + vNombre +
+            "! Eres apt@ para una Beca de Language Academy");
+            intentos --;
+            console.log(intentos);
+            postulantes.push(vNombre);
+            console.log(postulantes);
+            } else if (vEdad >= 18 && vTitulo == "Si"){
+        alert("Enhorabuena " + vNombre +
+            "! Eres apt@ para una Beca de Language Academy");
+            intentos --;
+            console.log(intentos);
+            postulantes.push(vNombre);
+            console.log(postulantes)
+    } else {
+         alert("Lo sentimos " + vNombre +
+            " , no eres elegible para una Beca en Language Academy.")
+    }
+}
+if (intentos == 0 ){
+    alert("Lo sentimos, se han agotado las plazas para las becas.Los alumnos elegidos para una beca son: "+ postulantes)
+}
+ 
+ }
+
+
+    </script>
+</body>
+</html>

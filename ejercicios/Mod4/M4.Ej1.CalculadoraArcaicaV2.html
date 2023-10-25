@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M6. Ejercicio 1.Calculadora(funciones)</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <!-- Calculadora arcaica. El programa pide al usuario que introduzca dos números y la operación que 
+        desea realizar. Cada operación (suma, resta, multiplicación, división y módulo) 
+        estará programada en una función distinta.
+
+    -->
+
+    <h1>Modulo 6. Ej1. Calculadora Arcaica <br>
+        (con funciones)</h1>
+
+    <p>Introduce dos números enteros y el símbolo de la operación que quieres realizar.
+        si haces click en el botón calcular el programa te muestra el resultado de dicha operación.</p>
+
+    <p>Introduce un número: <input id="numero1" type="number"></p>
+    <p>Introduce otro número: <input id="numero2" type="number"></p>
+
+    <p> Escoge la operación que quieres ejecutar: <select id="operadores">
+            <option value=1> suma (+)</option>
+            <option value=2> resta (-)</option>
+            <option value=3> multiplicación (*)</option>
+            <option value=4> división(/)</option>
+            <option value=5> residuo (%)</option>
+        </select>
+    </p>
+
+    <button onclick="main()">Calcular</button>
+    <br>
+    <p id="resultado"> </p>
+
+    <script>
+        'use strict'
+
+        function suma(num1, num2) {
+            return num1 + num2
+        }
+        
+        function resta(num1, num2) {
+            return num1 - num2
+        }
+        
+        function multiplica(num1, num2) {
+            return num1 * num2
+        }
+        
+        function divide(num1, num2) {
+            return num1 / num2
+        }
+       
+        function resto(num1, num2) {
+            return num1 % num2
+        }
+       
+        function main() {
+            let vNum1 = parseInt(document.getElementById("numero1").value);
+            let vNum2 = parseInt(document.getElementById("numero2").value);
+            let vOperacion = Number(document.getElementById("operadores").value);
+            let vResultado = "";
+            console.log(" Num1: " + vNum1 + " Num2 " + vNum2 + " operación: " + vOperacion)
+
+            switch (vOperacion) {
+                case 1:
+                    vResultado= "La suma de los números introducidos es: "+suma(vNum1, vNum2);
+                    break;
+                case 2:
+                    vResultado= "La resta de los números introducidos es: "+resta(vNum1, vNum2);
+                    break;
+                case 3:
+                    vResultado= "El producto de los números introducidos es:"+multiplica(vNum1, vNum2);
+                    break;
+                case 4:
+                   vResultado =  "La división de los números introducidos es:"+divide(vNum1, vNum2)
+                    break;
+                case 5:
+                    vResultado = "El residuo entre los números introducidos es:"+resto(vNum1, vNum2)
+                    break;
+                default:
+                    vResultado = "Por favor introduce un número válido"
+            }
+            document.getElementById("resultado").innerHTML = vResultado
+        }
+
+
+    </script>
+</body>
+
+</html>

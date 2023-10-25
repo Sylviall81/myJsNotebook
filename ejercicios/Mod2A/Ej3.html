@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4.E3:Comprobar Becas</title>
+    <style>
+        body {
+            font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica;
+            margin: 0 auto;
+            padding: 0 15em 5em 5em;
+        }
+
+        h1 {
+            color: #106CF6;
+            font-size: 115%;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        span {
+            display: inline-block;
+            width: 15em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Language Academy</h1>
+    <h2>Bienvenid@ a nuestra Web</h2>
+    <br>
+    <p> En Language Academy ofrecemos becas de estudio para todos nuestros cursos de idiomas.<br>
+        Para  ser elegible debes cumplir con alguno de los siguientes requisitos:
+        <ul>
+            <li>Estar en situacion de Paro</li>
+            <li>Ser mayor de edad y en posesión de un título universitario</li>
+        </ul>
+    
+    <h3> ¿Quieres saber si eres elegible para una de nuestras becas </h3>
+    <p>Ingresa tus datos en el formulario y el programa te dará la respuesta: </p>
+    <br>
+    <p>Nombre: <input id="nombre" type="text" placeholder="Introduce tu nombre"></p>
+    <p> Edad: <input id="edad" type="number" placeholder="Introduce tu edad"></p>
+    <p>¿Tienes un título universitario? <input id="titulo" size="45" type="texto"
+            placeholder="Por favor, contesta con S para si o N para no"> </p>
+    <p> ¿Te encuentras en paro actualmente? <input id="paro" size="40" type="text"
+            placeholder="Por favor, contesta con S para si o N para no"> </p>
+
+    <br>
+    <button onclick=evaluarBeca()>¿Soy apto para una beca?</button>
+    <br>
+    <br>
+    <p id="resultado"> </p>
+
+    <script>
+        "use strict"
+
+        function evaluarBeca() {
+            let vNombre = document.getElementById("nombre").value;
+            let vEdad = parseInt(document.getElementById("edad").value);
+            let vTitulo = document.getElementById("titulo").value;
+            let vParo = document.getElementById("paro").value;
+
+            console.log("vNombre:" + vNombre, "vEdad:" + vEdad, "vTitulo:" + vTitulo, "vParo:" +
+                vParo) //compruebo variables 
+
+            if (vTitulo != "s" && vTitulo != "S" && vTitulo != "n" && vTitulo != "N") {
+                alert("Error, por favor responde S o N para obtener un resultado")
+            }
+            if (vParo != "s" && vParo != "S" && vParo != "n" && vParo != "N") {
+                alert("Error, por favor responde S o N para obtener un resultado")
+            }
+            if (vParo == "s" || vParo == "S") {
+                document.getElementById("resultado").innerHTML = "Enhorabuena " + vNombre +
+                    "! Eres apt@ para una Beca de Language Academy";
+            } else if ((vEdad >= 18 && vTitulo == "S") || (vEdad >= 18 && vTitulo == "s")) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena " + vNombre +
+                    "! Eres apt@ para una Beca de Language Academy";
+            } else {
+                document.getElementById("resultado").innerHTML = "Lo sentimos " + vNombre +
+                    ", no eres elegible para una Beca en Language Academy."
+            }
+
+        }
+    </script>
+
+    <!-- //utilizo toUppercase para pasar todo a mayuscula. -->
+</body>
+
+</html>

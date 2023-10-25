@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M6.Ej2. Calcular la edia de edad(Funciones)</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>M6.Ej2. Calcular la media de edad (funciones). </h1>
+
+    <h3>Bienvenid@</h3>
+
+    <p>Este programa te ayudará a calcular la media de edad en un grupo de personas. <br>
+        Sigue las instrucciones y el programa se encargara de calcularla: <br>
+        <br>
+    </p>
+    <p>
+        <h3>Instrucciones:</h3>
+        <p>Dame por favor los siguientes datos:</p>
+        <ul>
+
+            <li> ¿Para cuantas personas quieres calcular la media? <br>
+                Introduce aqui el No. de personas <input type="number" id="nPersonas">
+    </p>
+    </li>
+    A continuación, introduce en un prompt las edades en números enteros entre 0 y 120 años.
+
+    Al finalizar obtendrás las edades insertadas y el calculo de la media por pantalla.
+
+    <p>Haz Click en el boton para empezar</p>
+    <button onclick="main()"> Empezar </button> <br>
+    <p id="resultado1"></p>
+    <p id="resultado2"></p>
+
+    <script>
+        "use strict"
+
+        let numUser = 0;
+        let arrayAges = [];
+        let media = 0;
+        let long = 0;
+        let sum = 0;
+
+        function calcuMedia(sum) {
+            let media = (sum / numUser);
+            console.log(media)
+            return media.toFixed(1);
+        }
+
+
+        function main() {
+
+            numUser = parseInt(document.getElementById("nPersonas").value);
+            console.log(numUser);
+            let vAge = 0;
+            let intentos = numUser;
+            let edad = 0;
+            let sum = 0;
+            let mediaEdad = 0;
+
+            do {
+                vAge = parseInt(prompt("Por favor ingresa una edad (0-120) para la persona num: " + intentos));
+                console.log(vAge);
+
+                if (vAge < 0 || vAge > 120) {
+                    alert("Error! Edad fuera del rango (0-120). Por Favor, inserta un número valido.");
+                } else {
+                    arrayAges.push(vAge);
+                    intentos--;
+                }
+            }
+            while (intentos >= 1);
+            console.log(arrayAges);
+           
+
+            alert("Ya has registrado la edad del número de personas solicitado: " + numUser +
+                "  A continuación verás tu resultado por pantalla.");
+
+            long = (arrayAges.length);
+             console.log(long);
+
+            if (long > 0) {
+                for (let i = 0; i < long; i++) {
+                    edad = arrayAges[i];
+                    console.log(edad);
+                    sum += arrayAges[i];
+                    console.log("sum: " + sum);
+                }
+
+                document.getElementById("resultado1").innerHTML = "Las edades insertadas para el cálculo son: " +
+                    "<ul>" + "<li>" + arrayAges + "</li>" + "</ul>";
+                document.getElementById("resultado2").innerHTML = "La media de las edades es: " + calcuMedia(sum);
+
+            }
+
+        };
+    </script>
+</body>
+
+</html>

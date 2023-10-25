@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+    <title>M3.Extra2:Calculadora de Pintura</title>
+</head>
+<body>
+    <h1>Calculadora de Pintura</h1>
+
+
+    <p>Si quieres calcular que cantidad de pintura es necesaria para tu pared, ingresa los siguientes datos y haz click en 
+        el bóton. <br> A continuación, el programa te indicará cuantos litros necesitas:</p>
+        <br>
+    <p> Ingresa la medida del ancho de tu pared en mts.: <input id="ancho" type="number" ></p>
+    <p> Ingresa la medida del alto de tu pared en mts: <input id="alto" type="number" ></p>
+    <p> ¿Cuántas capas de pintura quieres aplicar? <input id="capas" type="number" ></p>
+
+    <button onclick="calcular()">¿Cuánta pintura necesito?</button>
+
+<p id="resultado"></p>
+
+<script>
+
+function calcular(){
+        let vAncho = Number(document.getElementById("ancho").value);
+        let vAlto = Number(document.getElementById("alto").value);
+        let vCapas = Number(document.getElementById("capas").value);
+        console.log("ancho: ",vAncho," alto: ", vAlto," capas: ", vCapas);//verifico variables
+        const LITROS = 12
+       
+        let vArea = vAncho*vAlto
+        console.log("vArea: "+vArea)
+        let vPintura = (vArea/LITROS)
+        console.log("vPintura: "+vPintura.toFixed(2))
+        let vTotal= vPintura*vCapas
+        console.log("vTotal: "+vTotal.toFixed(2))
+    
+document.getElementById("resultado").innerHTML = "Para pintar tu pared de: "+ vAncho+" metros de ancho por "+vAlto+" metros de alto necesitas: "+ vTotal.toFixed(2)+" litros de pintura."
+
+    }
+        </script>
+</body>
+</html>

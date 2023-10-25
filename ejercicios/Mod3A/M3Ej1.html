@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.Ejercicio 1</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+<!--Instrucciones: 
+        Hacer un programa que pregunte al usuario por el número ( número ) 
+        de palabras que se quieren introducir en un array.
+Una vez que el usuario responda, el programa deberá preguntar por tantas palabras como 
+el número ( número ) de palabras que ha dicho el usuario que quería introducir.
+Las palabras se irán guardando en el array y una vez que han sido todas introducidas, se muestran por pantalla .
+Se piden las palabras x Prompt.
+    -->
+
+<body>
+    <h1>(M5) Ejercicio 1. El usuario/a decide cuántas palabras quiere introducir.</h1>
+
+    <p>Hagamos junt@s una lista de tus palabras favoritas! </p>
+
+    <strong> Instrucciones:</strong> <br>
+    <p> 1. Dime cuantas palabras quieres añadir a tu lista: <br>
+        No. de Palabras <input type="number" placeholder="ingresa un número" id="nPalabras"></p>
+    <p> 2. Luego, te pediré que las escribas en una ventana emergente y <br>
+        3. Al finalizar,te mostraré todas las palabras ingresadas en un pop up.</p>
+
+    <button style="color: darkmagenta;" onclick=pFavoritas()> <strong> EMPEZAR!</strong>
+    </button>
+
+
+    <script>
+        "use strict"
+
+        function pFavoritas() {
+            
+            let vNpalabras = parseInt(document.getElementById("nPalabras").value)
+            console.log(vNpalabras)
+            
+            if (vNpalabras <= 0) {
+                alert("Error: por favor indica un número positivo o no podremos jugar");
+            
+            } else { 
+                //cambie las variables abajo xq no se necesitan arriba y consumen memoria -no es necesario pero es mas eficiente; ambito local y global-
+                let favWords = [];
+                let word = " ";
+                let i = 0;
+
+                for (i = 1; i <= vNpalabras; i++) {
+                    console.log(i + "Inserta una palabra:")
+                    word = prompt("Inserta una palabra:")
+                    console.log(word)
+                    favWords.push(word);
+                    console.log(favWords)
+                }
+                alert("Estas son las palabras que has introducido: " + favWords);
+                alert("Espero que te haya gustado! Gracias por jugar conmigo " + ":D");
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
