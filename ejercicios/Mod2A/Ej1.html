@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4E1.Mayor o menor de edad.</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+<body>
+    <h1>Introduce tus datos</h1>
+
+    <p>Haz click en el botón para ver tus datos en pantalla, alert y en la consola y 
+        el programa te dira si eres mayor o menor de edad: </p>
+
+    <button onclick="mostrarDatos()">Ver mis datos</button>
+
+    <p id="muestraDatos"></p>
+    <p id="comprobarEdad"></p>
+
+    <script>
+
+        let vNombre= prompt("Por favor, introduce tu nombre","nombre")
+        let vApellido= prompt("Por favor, introduce tu apellido","apellido")
+        let vEdad= prompt("Por favor, introduce tu edad",0)
+
+function mostrarDatos (){
+
+    console.log ("Tu nombre completo es: " +vNombre+ " " +vApellido+" y tienes: "+vEdad+" años");
+    document.getElementById("muestraDatos").innerHTML = "Tu nombre completo es: "+vNombre+" "+vApellido+" y tienes "+vEdad+" años."
+
+    if (vEdad>=18){ document.getElementById("comprobarEdad").innerHTML = vNombre+" "+vApellido+" eres MAYOR de edad"};
+    if (vEdad<18){ document.getElementById("comprobarEdad").innerHTML = vNombre+" "+vApellido+ " eres MENOR de edad"};
+};
+    </script>
+</body>
+</html>

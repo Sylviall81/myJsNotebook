@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.E2.Suma los valores entre dos números.</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>M5.E2.Suma los valores entre dos números.</h1>
+
+    <p>Introduce dos números y el programa te dara la sumatoria de todos los valores comprendidos entre ellos</p>
+    <br>
+    <p> Numero 1: <input type="number" id="num1"> </p>
+    <p> Numero 2: <input type="number" id="num2"> </p>
+
+    <button onclick="calcular()">Ejecutar</button>
+
+    <h3 id="resultado"></h3>
+
+
+
+
+    <script>
+        "use strict"
+
+        function calcular() {
+            let vNum1 = parseInt(document.getElementById("num1").value)
+            let vNum2 = parseInt(document.getElementById("num2").value)
+            let vTemp = 0
+            let vSuma = 0
+            let vSuma2 = " ";
+            console.log("Input original: " + " numero 1: " + vNum1 + " numero 2: " + vNum2);
+            document.getElementById("resultado").innerHTML = " ";
+
+            if (vNum1 > vNum2) {
+                vTemp = vNum1
+                vNum1 = vNum2
+                vNum2 = vTemp
+                console.log("Traspaso: " + " numero 1: " + vNum1 + " número 2: " + vNum2);
+            }
+
+            for (let i = vNum1; i <= vNum2; i++) {
+                console.log(i + "*");
+                vSuma += i;
+                console.log(vSuma);
+            }
+            document.getElementById("resultado").innerHTML = " La suma de todos los valores entre " + vNum1 +
+                " y " + vNum2 + " es igual a " + vSuma;
+        }
+    </script>
+</body>
+
+</html>

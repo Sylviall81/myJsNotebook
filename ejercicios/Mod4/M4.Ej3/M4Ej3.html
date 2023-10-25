@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M6.Ej3.Practica el uso de funciones.</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+    <details>
+        <summary>Instrucciones</summary>
+Realiza un programa con 5 funciones y un array vacío (Global) llamado tiempo .
+
+El HTML debe tener cuatro botones que llamen a una única función menu que envíe para parámetro la función que se desea ejecutar. 
+
+Ejemplo:
+
+<button onclick='menu(1)'>Registrar fecha y hora</button>
+La función menu se encargará de pasar los parámetros necesarios al resto de funciones.
+
+1. Crea una función que añada al array tiempo , fecha y hora actuales.
+
+2. Crea una función que reciba un valor y un array de números como parámetro.
+Esta función devolverá el índice del array donde se encuentra el valor.
+Si el valor no se encuentra, se devolverá -1.
+
+3.Crea una función que reciba una frase como parámetro y la devuelva en minúsculas sin espacios en blanco, sin acentos y sin signos de puntuación.
+Ejemplo, si la frase es:
+- En Cornellà, Tània y Aina cortan roca.
+La función tendrá que volver:
+acornellataniayinatallenroca
+
+4.Crea una función que reciba un array y un string como parámetro
+y devuelva otro array con aquellos elementos del array recibido que contengan el texto enviado.
+Ejemplo: Se recibe el siguiente array:
+
+asignaturas = [
+'Historia universal',
+'Historia de España',
+'Geografía',
+'Historia de la lengua catalana',
+'Antropología',
+'Inglés']
+
+y la palabra 'Historia'
+
+La función tendrá que devolver el siguiente array:
+[
+'Historia universal',
+'Historia de 'España',
+'Historia de la lengua catalana', ]
+
+
+
+-->
+    </details>
+    
+
+
+    <h1>Ejercicio 6.3. Practica Funciones.</h1>
+
+
+    <details>
+        <summary> <strong> Ejercicio 6.3.Instrucciones:</strong> </summary>
+
+        <p> Realiza un programa con 5 funciones y un array vacío (Global) llamado tiempo. <br>
+
+            El HTML debe tener cuatro botones que llamen a una única función menu que envíe para parámetro la función
+            que se desea ejecutar. <br>
+
+            Ejemplo: <br>
+            <br>
+
+            <img width=450 src="img/codigo.jpg" alt="foto codigo"> <br>
+            <br>
+            La función menu se encargará de pasar los parámetros necesarios al resto de funciones.
+
+            <ol>
+
+                <li> Crea una función que añada al array tiempo , fecha y hora actuales.</li>
+                <br>
+                <li> Crea una función que reciba un valor y un array de números como parámetro.
+                    Esta función devolverá el índice del array donde se encuentra el valor.
+                    Si el valor no se encuentra, se devolverá -1. </li>
+                <br>
+
+                <li>
+                    Crea una función que reciba una frase como parámetro y la devuelva en minúsculas sin espacios en
+                    blanco, sin acentos y sin signos de puntuación. <br>
+                    Ejemplo, si la frase es:
+                    - En Cornellà, Tània y Aina cortan roca.
+                    La función tendrá que volver:
+                    acornellataniayinatallenroca
+                </li>
+                <br>
+                <li>
+                    Crea una función que reciba un array y un string como parámetro
+                    y devuelva otro array con aquellos elementos del array recibido que contengan el texto enviado.
+                    <br>
+                    Ejemplo: Se recibe el siguiente array:
+                    <br>
+                    <br>
+                    <ul>
+                        <strong> asignaturas = </strong> [
+                        <br>
+                        <li> 'Historia universal',</li>
+                        <li> 'Historia de España'</li>
+                        <li> 'Geografía', </li>
+                        <li>'Historia de la lengua catalana',
+                        </li>
+                        <li>'Antropología',
+                        </li>
+                        <li> 'Inglés']
+                        </li>
+                    </ul>
+
+                    y la palabra 'Historia'.
+                    <br>
+                    La función tendrá que devolver el siguiente array:
+
+                    <ul> [
+                        <li> 'Historia universal',</li>
+                        <li> 'Historia de 'España',</li>
+                        <li> 'Historia de la lengua catalana', ] </li>
+                    </ul>
+                </li>
+
+            </ol>
+
+        </p>
+    </details>
+    <br>
+    <p>
+        <button onclick="menu(1)">Registrar Fecha y Hora</button> </p>
+
+    <p id="resultadoHora"></p>
+    <br>
+<hr>
+    <p>Dado el siguiente Array : [ 0, 14, 13, 25, 21, 03, 04, 09, 12, 40, 55, 81, 85];<br>
+        Selecciona uno de sus valores y el programa te dirá en que posición se encuentra </p>
+    Introduce un valor: <input type="number" id="valorNumber">
+    <p></p>
+    <br>
+    <p id="posicionArray"></p>
+    <p> <button onclick="menu(2)">Posición en el Array</button> </p>
+
+<hr>
+    <p> Ingresa una frase y el programa te la devolverá en minúsculas, sin espacios en
+        blanco, sin acentos y sin signos de puntuación. <br>
+        Ejemplo, si la frase es:
+        " En Cornellá, Tánia y Aina cortan roca."
+        <br>
+        El resultado será: <span style="color:red"> encornellataniayinatallenroca </span>
+    </p>
+
+    <p>Ingresa tu frase: <input id="frase" type="text" size="70"></p>
+
+
+    <p id="resultadoFrase"></p>
+    <p> <button onclick="menu(3)">Limpiar Frase</button> </p> <br>
+    <br>
+    <hr>
+
+    <p> Ingresa las palabras para generar un Array: <input id="arrayUno" type="text" size="75">
+    </p>
+    <p id="showArray"></p>
+
+    <p>Luego, inserta una palabra que quieres buscar en ese Array y <br>
+        el programa la encontrará por ti:
+        <br>
+        <br>
+<strong>      Buscar: </strong>   <input id="encontrar" type="text"></p>
+<br>
+    <p id="resultadoBusqueda"></p>
+    <br>
+    <p> <button onclick="menu(4)">Busqueda palabra</button> </p>
+    <br>
+
+    <script>
+        "use strict"
+
+        let tiempo = [];
+        let vCadena = "";
+        let almacen = [];
+        let n = "";
+        let wordSearch="";
+
+        function date() {
+            let fechaHora = new Date();
+            //console.log(fechaHora);
+            tiempo.push(fechaHora);
+            //console.log(tiempo);
+            return tiempo
+        }
+
+        function valorArray(n) {
+            let arrayNum = ["0", "14", "13", "25", "21", "03", "04", "09", "12", "40", "55", "81", "85"];
+            //console.log(arrayNum.indexOf("55"));
+            return arrayNum.indexOf(n)
+
+        }
+
+        function limpiarFrase() {
+            
+            vCadena = ((document.getElementById("frase").value).toLowerCase());
+            vCadena = vCadena.replaceAll(" ", "");
+            console.log(vCadena);
+            vCadena = vCadena.replaceAll("á", "a");
+            console.log(vCadena);
+            vCadena = vCadena.replaceAll(",", "");
+            console.log(vCadena);
+            vCadena = vCadena.replaceAll(".", "");
+            console.log(vCadena);
+            vCadena = vCadena.replaceAll("í", "i");
+            vCadena = vCadena.replaceAll("é", "e");
+            vCadena = vCadena.replaceAll("ó", "o");
+            vCadena = vCadena.replaceAll("ú", "u");
+            vCadena = vCadena.replaceAll(".", "");
+            vCadena = vCadena.replaceAll(";", "");
+            vCadena = vCadena.replaceAll("!", "");
+            vCadena = vCadena.replaceAll("?", "");
+            vCadena = vCadena.replaceAll("(", "");
+            vCadena = vCadena.replaceAll(")", "");
+            vCadena = vCadena.replaceAll("'", "");
+            console.log(vCadena);
+            return vCadena;
+        }
+
+        function busqueda() {
+            
+            let stringUser = document.getElementById("arrayUno").value;
+            console.log("stringUser: " + stringUser);
+            let arrayPalabras = (stringUser.split(","));
+            console.log("arrayPalabras: " + arrayPalabras);
+            let longitud = arrayPalabras.length
+            console.log(longitud);
+            let i = 0;
+            wordSearch = (document.getElementById("encontrar").value);
+            console.log(wordSearch);
+          
+
+            for (i = 0; i < (longitud - 1); i++) {
+                console.log(arrayPalabras[i]);
+                if (arrayPalabras[i].match(wordSearch)) {
+                    almacen.push(arrayPalabras[i]);
+                }
+                console.log(almacen);
+                
+            }
+        }
+
+
+        function menu(opcion) {
+
+            let vResultado = "";
+            let vResultado2 = "";
+            let vResultado3 = "";
+            let vResultado4 = "";
+            let vValor = (document.getElementById("valorNumber").value);
+           
+            switch (opcion) {
+                case 1:
+                    date()
+                    vResultado = "El array tiempo contiene: " + tiempo
+                    break;
+                case 2:
+                    vResultado2 = "El valor seleccionado: " + vValor + " se encuentra en la posisción: " + valorArray(
+                        vValor);
+                    console.log(vResultado2)
+                    break;
+                case 3:
+                    vCadena =
+                        vResultado3 = limpiarFrase(vCadena);
+                    break;
+                case 4:
+                    busqueda(wordSearch)
+                    vResultado4 = "la palabra que buscas: " + "<strong>" + wordSearch +"</strong>" +" se encuentra en los elementos: "+"<br>"+ 
+                    "<ul>"+ almacen+ "</ul>"
+            }
+            document.getElementById("resultadoHora").innerHTML = vResultado;
+            document.getElementById("posicionArray").innerHTML = vResultado2;
+            document.getElementById("resultadoFrase").innerHTML = vResultado3;
+            document.getElementById("resultadoBusqueda").innerHTML = vResultado4;
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+    <title>M3.Ejercio EXTRA 1</title>
+</head>
+<body>
+    <h1>Ejercio Extra 1. Calcula el DOBLE y el TRIPLE</h1>
+
+   <p>Introduce un número y el programa calculará el doble y el triple:</p>
+
+   <p>Número: <input id="valor1" type="number"> </p>
+   
+   <button onclick="calcular()">Calcular el Doble y el Triple</button>
+
+   <p id="resultado"></p>
+
+<script>
+
+function calcular(){
+    let vValor1 = Number(document.getElementById("valor1").value);
+console.log(vValor1)
+    document.getElementById("resultado").innerHTML = "El DOBLE de: "+vValor1+ " es igual a: "+(vValor1*2)+" y el TRIPLE de: "+vValor1+" es igual a: "+(vValor1*3)
+}
+
+</script>
+
+</body>
+</html>

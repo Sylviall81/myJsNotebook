@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.Ejercicio 3</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+
+
+<details> <summary>Instrucciones:</summary>
+
+El ejercicio consiste en que el usuario/a debe adivinar el número escogido aleatoriamente por el programa.
+
+El programa, pide números al usuario/a hasta que éste acierte el número aleatorio generado por el programa.
+
+Una vez el usuario/a ha adivinado el número, se mostrará por pantalla el siguiente mensaje: “Enhorabuena, el número era X”.
+</details>
+
+
+
+<body>
+    <h1>(M5) Ejercicio 3. Adivina un número del 1 al 10.</h1>
+
+    <p>Vamos a jugar! </p>
+
+    <strong> Instrucciones:</strong> <br>
+
+    
+    <p>  El programa va a generar un número aleatorio entre el 1 y el 10 y tu tienes que adivinarlo.</p>
+      
+
+    <button style="color: darkmagenta;" onclick= fAdivina()> <strong> EMPEZAR!</strong>
+    </button>
+ <p id="mensaje"></p>
+
+    <script>
+        "use strict"
+
+        function fAdivina() {
+
+            let numOrdenador = Math.ceil((Math.random() * 10));
+            console.log(numOrdenador)
+            let numUser = prompt("Dime un número del 1 al 10");
+                console.log (numUser);
+           
+            while ( numUser != numOrdenador) {
+                numUser= prompt("Lo siento, esta vez no has adivinado. Intenta de nuevo:");
+                console.log (numUser)
+            }
+        
+            document.getElementById("mensaje").innerHTML= "Enhorabuena, has acertado! "+
+            "<br>"+ "El número era: "+ numOrdenador+"<br>"+
+            " Espero que te haya gustado! Gracias por jugar conmigo " + ":D ";
+                //alert("Enhorabuena, has acertado! el número era: "+ numOrdenador+" Espero que te haya gustado! Gracias por jugar conmigo " + ":D ");
+                
+        }
+        
+
+            
+        
+    </script>
+</body>
+
+</html>

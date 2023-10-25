@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+    <title>Ejercicio 1. Mostrar Datos</title>
+</head>
+
+<body>
+
+    <h1>Ejercicio 1. Mostrar Datos</h1>
+
+
+    <details>
+        <summary> <strong>Instrucciones:</strong> </summary>
+        Hacer un programa que le solicite al usuario estos datos:
+        <ul>
+            <li>Nombre</li>
+            <li>Apellido</li>
+            <li>Edad</li>
+        </ul>
+
+        Una vez que el usuario haya terminado de introducir los datos, éstos deben mostrarse:
+
+        <ul>
+            <li>Por Consola</li>
+            <li>Impresos en HTML</li>
+            <li>En un Alert</li>
+           
+        </ul>
+    </details>
+    <br>
+
+   
+        <h3>Por favor inserta tus datos aqui:</h3>
+
+        <p>Nombre: <input type="text" name="" id="name"> </p>
+        <p>Apellido: <input type="text" name="" id="lastname"> </p>
+        <p>Edad: <input type="number" name="" id="age"> </p>
+
+        <button onclick="mostrar()">Mostrar Datos</button>
+
+    <p>Resultado:</p>
+
+    <h3 id="print-data"></h3>
+
+    <script>
+        'use strict';
+
+           
+        function mostrar(){
+
+            let vName = document.getElementById("name").value;
+           let vLastName = document.getElementById("lastname").value;           
+           let vAge = parseInt(document.getElementById("age").value);
+           
+           let vMessage = `Los datos del usuario son: nombre: ${vName} apellido: ${vLastName} y edad: ${vAge}`
+            
+
+            //por consola
+            console.log("nombre usuario:",vName," ",vLastName," ","Edad usuario:",vAge);
+
+            //por pantalla
+
+            document.getElementById("print-data").innerHTML = vMessage;
+
+            //por alert
+            alert(vMessage);
+
+            
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

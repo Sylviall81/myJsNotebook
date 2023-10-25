@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4-E4. Cuántos dias tiene cada mes?. </title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+    <h1>¿Cuantos dias tiene el mes?</h1>
+
+    <p> Por favor, inserta el No. de mes y te diremos cuantos dias tiene </p>
+
+    <p>Mes: <input id="mes" type="number" placeholder="Inserta un número del 1 al 12"> </p>
+
+    <button onclick=diasMes()> ¿Cuántos dias tiene el mes?</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        "use strict"
+
+        function diasMes() {
+            let mes = Number(document.getElementById("mes").value);
+        console.log(mes)
+
+            switch (mes) {
+                case 1:
+                    document.getElementById("resultado").innerHTML = "El Mes de Enero tiene 31 dias";
+                    break;
+                case 2:
+                    document.getElementById("resultado").innerHTML = "El Mes de Febrero tiene 28 dias";
+                    break;
+                case 3:
+                    document.getElementById("resultado").innerHTML = "El Mes de Marzo tiene 31 dias";
+                    break;
+                case 4:
+                    document.getElementById("resultado").innerHTML = "El Mes de Abril tiene 30 dias";
+                    break;
+                case 5:
+                    document.getElementById("resultado").innerHTML = "El Mes de Mayo tiene 31 dias";
+                break;
+                    case 6:
+                    document.getElementById("resultado").innerHTML = "El Mes de Junio tiene 30 dias";
+                break;
+                    case 7:
+                    document.getElementById("resultado").innerHTML = "El Mes de Julio tiene 31 dias";
+                break;
+                    case 8:
+                    document.getElementById("resultado").innerHTML = "El Mes de Agosto tiene 31 dias";
+                break;
+                    case 9:
+                    document.getElementById("resultado").innerHTML = "El Mes de Septiembre tiene 30 dias";
+                break;
+                    case 10:
+                    document.getElementById("resultado").innerHTML = "El Mes de Octubre tiene 31 dias";
+                break;
+                    case 11:
+                    document.getElementById("resultado").innerHTML = "El Mes de Noviembre tiene 30 dias";
+                break;
+                    case 12:
+                    document.getElementById("resultado").innerHTML = "El Mes de Diciembre tiene 31 dias";
+                    break;
+                default:
+                    document.getElementById("resultado").innerHTML = "Introduce un número entre el 1 y 12 por favor";
+            }
+            }
+    </script>
+</body>
+
+</html>

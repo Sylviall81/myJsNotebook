@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.EXTRA2.Dibuja una L</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1, h3{color:#106CF6; font-size: 115%;}
+        
+        p {margin:0; line-height: 1.5;}
+        .color-print { color: #106CF6}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <!--Realiza un programa que pinte la letra L por pantalla hecha con asteriscos.
+El programa pedirá la altura.
+El mástil horizontal de la L tendrá una longitud de la mitad (división entera entre 2) de la altura más uno.
+
+    -->
+    <h3>Bienvenid@</h3>
+
+    <p>Vamos a dibujar en la pantalla una L con asteriscos ("*"): <br>
+        <br>
+        Dime cuantas líneas quieres para la altura de la L y el programa la dibujara para ti </p>
+    <h4> Sigue las instrucciones para empezar: </h4>
+
+    <p> 1.Introduce un número entero para la altura de la L <input type="number" id="nAltura"></p>
+
+    <p>3.Haz Click en el boton y observa el resultado!</p>
+
+    <button onclick="fDibuja()">Mostrar</button> <br>
+    <p class= "color-print" id="draw"></p>
+
+
+
+    <script>
+        "use strict"
+
+        function fDibuja() {
+
+
+            let vAltura = Number(document.getElementById("nAltura").value);
+            let vCaracter = "*";
+            let vCol = 0;
+            let vFila = 0;
+            let vBase = parseInt((vAltura / 2) + 1);
+            console.log(vBase)
+            document.getElementById("draw").innerHTML = "";
+
+            for (vCol = 1; vCol < vAltura; vCol++) {
+                document.getElementById("draw").innerHTML += vCaracter + "<br> ";
+            }
+
+            for (vFila = 1; vFila < vBase; vFila++) {
+                document.getElementById("draw").innerHTML += vCaracter + " ";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7.1.Ejercicio 4: Numeros Negativos</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+
+</head>
+
+<body>
+    <h1>Jugar con números</h1>
+
+    <p>Introduce dos números y el programa te dirá si alguno de ellos es negativo:</p>
+    <p> Numero 1: <input id="num1" type="number" placeholder="Inserta un número"></p>
+    <p> Numero 2: <input id="num2" type="number" placeholder="Inserta un número"></p>
+<br>
+    <button onclick="calcularNegativo()">¿Son negativos?</button>
+
+    <p id="respuesta"></p>
+
+    <script>
+        "use strict"
+
+        function calcularNegativo() {
+    let vNum1 = Number(document.getElementById("num1").value);
+    let vNum2 = Number(document.getElementById("num2").value);
+    console.log("vNum1: " + vNum1, "vNum2: " + vNum2);
+    
+    let vCalculo = (vNum1 < 0 || vNum2 < 0) ? "Al menos uno de los números es negativo" : "Ambos números son positivos";
+
+    console.log(vCalculo);
+    document.getElementById("respuesta").innerHTML = vCalculo;
+}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5.Extra1:Caliente/Frio</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    
+
+    <!--Modulo 5:
+Ejercicios Extra Modulo 5: Estructuras Repetitivas y Array:
+EXTRA1:
+
+Realizar un juego para adivinar un número aleatorio N entre 1 y 500.
+
+Si la distancia entre el número a adivinar y el del usuario/a es de 50 o más, el programa deberá decir:
+
+“Frío: tu número es mayor” o “Frío: tu número es más pequeño”
+
+
+
+Si la distancia entre el número a adivinar y el del usuario/a está entre 15 y 50, el programa deberá decir:
+
+"Tibio: tu número es mayor" o "Tibio: tu número es más pequeño" 
+
+
+
+Y si la distancia entre el número a adivinar y el del usuario/ay si la distancia es menor a 15, el programa deberá decir:
+
+“Caliente, caliente: tu número es mayor” o “Caliente, caliente: tu número es más pequeño”
+
+El proceso termina cuando el usuario acierta.
+
+
+Para saber más
+
+-> https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/A_first_splash
+
+
+
+
+    -->
+
+    <h1> M5.Extra1:Caliente/Frio </h1>
+
+    <p> Debes adivinar un número aleatorio entre 1 y 500.
+        El programa te ira dando pistas si te acercas o no. <br>
+        Si tu número esta a mas de 50 numeros del indicado el programa te indicara FRIO! <br>
+        Si tu intento esta entre 15 y 50 numeros del correcto el programa indicará TIBIO! <br>
+        y si la distancia entre tu número y el acertado es menor a 15 el programa indicará CALIENTE! <br>
+    </p>
+
+    <h3>Vamos a Jugar!</h3>
+
+    <button onclick="Jugar()">JUGAR!</button>
+
+    <p id="resultado"></p>
+
+
+
+
+    <script>
+        "use strict"
+
+        function Jugar() {
+
+            let numRandom = Math.floor(Math.random() * (500 - 1)) + 1
+            console.log(numRandom);
+            let numUser = 0;
+
+                do {
+                    numUser = prompt("Introduce un número", 0);
+                    console.log(numUser);
+                
+                    if (numUser <= (numRandom - 50)) {
+                        alert("FRIO. Tu número es mucho MAS PEQUEÑO que el número aletaorio. Intenta de nuevo");
+                    };
+
+                    if (numUser >= (numRandom + 50)) {
+                        alert("FRIO. Tu número es mucho MAS GRANDE que el número aletaorio. Intenta de nuevo");
+                    };
+
+                    if (numUser > (numRandom - 50) && numUser < (numRandom - 15)) {
+                        alert("TIBIO. Tu número es MAS PEQUEÑO que el número aletaorio. Intenta de nuevo");
+                    };
+
+                    if (numUser < (numRandom + 50) && numUser > (numRandom + 15)) {
+                        alert("TIBIO. Tu número es MAS GRANDE que el número aletaorio. Intenta de nuevo");
+                    };
+
+                    if (numUser <= (numRandom-1) && numUser >= (numRandom - 15)) {
+                        alert("CALIENTE. Tu número es solo un poco mas PEQUEÑO que el número aleatorio");
+                    };
+
+                    if (numUser >= (numRandom+1) && numUser <= (numRandom + 15) ) {
+                        alert("CALIENTE. Tu número es solo un poco mas GRANDE que el número aleatorio");
+                    };
+                    //numUser = parseInt(prompt("Intenta de nuevo", 0));
+                } while (numUser != numRandom);
+
+                alert("Enhorabuena, has acertado. El número aleatorio era: " + numRandom)
+            }
+        
+    </script>
+</body>
+
+</html>

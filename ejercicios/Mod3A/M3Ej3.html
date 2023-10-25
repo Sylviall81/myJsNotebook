@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7.1.Ej7. Dibuja un Cuadrado</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        .stair { color: #106CF6}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>M7.2.Ej7. Dibuja una escalera descendente </h1>
+
+    <h3>Bienvenid@</h3>
+
+    <p>Vamos a dibujar junt@s una escalerilla de asteriscos "*" en la pantalla: <br>
+        <br>
+        Dime cuantas líneas quieres que ocupe la escalera y yo lo dibujaré para tí! </p>
+    <h4> Sigue las instrucciones para empezar: </h4>
+
+
+    <p> 1.Introduce el No. de escalones que quieres para la escalera <input type="number" id="nLineas"></p>
+
+    <p>3.Haz Click en el boton y observa el resultado!</p>
+    <button onclick="fDibuja()">Mostrar</button> 
+    <br>
+    <br>
+    <p class= "stair" id="draw"></p>
+
+    <script>
+        "use strict"
+
+        function fDibuja() {
+
+            let vNlineas = Number(document.getElementById("nLineas").value);
+            let vCaracter = "*";
+            console.log("Prueba 1: Lineas: " + vNlineas + " caracter: " + vCaracter);
+
+            document.getElementById("draw").innerHTML = "";
+            let vFila = 0
+            let vColumna = 0
+
+
+            for (vFila = 1; vFila <= vNlineas; vFila++) {
+                console.log(vFila+"*")
+                for (vColumna = 0; vColumna < vFila; vColumna++){
+        document.getElementById("draw").innerHTML += vCaracter + " ";
+                }
+              document.getElementById("draw").innerHTML += "<br>";
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

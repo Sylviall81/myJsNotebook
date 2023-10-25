@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4-E5. ¿Que quieres calcular?. </title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>¿Que quieres calcular?</h1>
+
+    <p>Introduce dos números y un tipo de operación que desees realizar con ellos, <br>
+        presiona el botón y el programa te dara el resultado</p>
+
+    <p>Numero 1: <input id="num1" type="number" placeholder="Inserta un número"> </p>
+    <p>Numero 2: <input id="num2" type="number" placeholder="Inserta un número"> </p>
+    <p> ¿Qué operacion quieres realizar? <br>
+        Inserta: + para suma | - para resta | * para multiplicación | / para división :
+        <select id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </p>
+
+    <button onclick=hacerOperaciones()> Dame el resultado</button>
+
+    <p id="resultado"></p>
+
+
+    <script>
+        function hacerOperaciones() {
+            let vNum1 = Number(document.getElementById("num1").value)
+            let vNum2 = Number(document.getElementById("num2").value)
+            let vOperador = document.getElementById("operador").value
+            console.log("vNum1: " + vNum1, " vNum2: " + vNum2, " vOperador: " + vOperador);
+
+            switch (vOperador) {
+                case "+":
+                    document.getElementById("resultado").innerHTML =
+                        " El resultado de la suma de tus dos dígitos es: " + (vNum1 + vNum2);
+                    break;
+                case "-":
+                    document.getElementById("resultado").innerHTML =
+                        " El resultado de la resta de tus dos dígitos es: " + (vNum1 - vNum2);
+                    break;
+                case "*":
+                    document.getElementById("resultado").innerHTML =
+                        " El resultado de la multiplicación de tus dos dígitos es: " + (vNum1 * vNum2);
+                    break;
+                case "/":
+                    document.getElementById("resultado").innerHTML =
+                        " El resultado de la división de tus dos dígitos es: " + (vNum1 / vNum2);
+                    break;
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

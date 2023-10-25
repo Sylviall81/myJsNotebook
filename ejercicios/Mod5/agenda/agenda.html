@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body {
+         font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica;
+         width: 98%;
+         margin: 0 auto;
+         font-size: 11pt;
+         font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+
+      li {
+         margin-top: 0.5em;
+      }
+
+      button {
+         width: 20em;
+      }
+   </style>
+   <title></title>
+</head>
+
+<body>
+   <h1>Dados los datos de la agenda, se pide:</h1>
+   <ol>
+      <li>Usando la consola (F12) y las posiciones directamente... Ejemplo: [1]</li>
+      <ol>
+         <li>Mostrar toda la agenda</li>
+         <button id="11" onclick="f11()">Toda la agenda </button>
+         <li>Mostrar datos de contacto de Emergencias médicas</li>
+         <button id="12" onclick="f12()">Emergencias médicas</button>
+         <li>Mostrar los datos de cancelación de las tarjetas de crédito</li>
+         <button id="13" onclick="f13()">Cancelación Tarjetas de Crédito</button>
+      </ol>
+
+      <li>Usando prompts y búsquedas con el bucle while</li>
+      <ol>
+         <li>Mostrar los datos de contacto de los Bomberos</li>
+         <button id="21" onclick='f21()'>Búsqueda Bomberos</button>
+         <li>Indicar la página web de la Cruz Roja</li>
+         <button id="22" onclick='f22()'>Búsqueda web de la Cruz Roja</button>
+         <li>Indicar teléfono y página web de MasterCard</li>
+         <button id="23" onclick='f23()'>Búsqueda MasterCard</button>
+         <li>Prueba</li>
+         <button id="24" onclick='f24()'>Búsqueda MasterCard</button>
+      </ol>
+
+   </ol>
+
+   <script>
+      "use strict"
+   </script>
+
+   <script src="js/datos.js"> </script>
+
+   <script>
+      function buscar(valor) {
+         let encontrado = false;
+         let indice = -1;
+         let i = 0;
+         let vueltas = agenda.length;
+         let j = "";
+
+         while (i < vueltas && !encontrado) {
+            j = 0
+            while (j < agenda[i].contactos.length && !encontrado) {
+               if (valor == agenda[i].contactos[j].contacto) {
+                  encontrado = true;
+                  indice = agenda[i].contactos[j];
+                  console.log("posicion agenda [i]: i: " + i + " posicion contacto[j]: j: " + j);
+                  //console.log(indice);
+               }
+               j++;
+            }
+            i++;
+         }
+         return indice;
+      }
+
+
+      function f11() {
+
+         return console.table(agenda);
+
+      };
+
+      function f12() {
+
+         return console.table(agenda[0].contactos[3]);
+
+      };
+
+      function f13() {
+
+         return console.table(agenda[1]);
+
+      }
+
+
+      function f21() {
+         let vNombre = prompt("Introduzca el contacto que desea buscar:", "Bomberos");
+         let mostrar = buscar(vNombre);
+         console.table(mostrar)
+
+         //agenda[0].contactos[2]
+
+      }
+
+
+      function f22() {
+
+         let vNombre = prompt("Introduzca el contacto del cual desea ver su Web:", "Bomberos");
+         let currentContact = buscar(vNombre);
+
+         console.log(currentContact.web)
+
+      }
+
+
+      function f23() {
+
+         let vNombre = prompt("Introduzca el contacto del cual desea consultar su web y telefono: ", "Bomberos");
+         let currentContact = buscar(vNombre);
+         console.log ()
+      
+         console.log("Web del contacto : " + currentContact.web);
+         console.log("Telef del Contacto: " + currentContact.numeroTelefono);
+
+      }
+
+      /*function f24(){
+
+         agenda.find(agenda[0] => contactos.contacto == "Bomberos")
+         Metodos:
+
+         video : 7 metodos https://www.youtube.com/watch?v=5yPf74sCu2k
+         some
+         find
+         includes
+         every
+         filter
+         reduce
+         
+         
+         Metodo map: 
+
+      }*/
+
+
+   </script>
+
+</body>
+
+</html>

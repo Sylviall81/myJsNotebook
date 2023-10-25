@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4-E6.¿Cuál es tu signo del zodíaco?</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+
+<body>
+
+    <h1>¿Cuál es tu signo del zodíaco?</h1>
+
+    <p> Introduce tu día y mes de cumpleaños y el programa te dirá cual es tu signo del zodíaco.</p>
+
+    <p>Día: <input id="dia" type="number" placeholder="Del 1 al 31"> </p>
+    <p>Mes: <input id="mes" type="number" placeholder="Del 1 al 12"> </p>
+
+    <button onclick="miSigno()">¿Cuál es mi signo del Zodíaco?</button>
+    <p id="resultadoSigno"></p>
+
+    <p> <img id="imagenSigno" src="https://i.etsystatic.com/38750845/r/il/ccba20/4488510643/il_794xN.4488510643_hipc.jpg"> </p>
+
+    <script>
+        function miSigno() {
+            let vDia = Number(document.getElementById("dia").value);
+            let vMes = Number(document.getElementById("mes").value);
+            let vImg = document.getElementById("imagenSigno");
+            let vImgPath = "";
+            let vSigno = " ";
+
+// DUDAS: ¿Como hago si quiero que si se ingresa un dia mayor de 31 me diga error.
+                     
+
+            if ((vDia > 31 || vDia < 0) && (vMes == 1 || vMes == 3 || vMes == 5 || vMes == 7 || vMes == 8 || vMes ==
+                    10 || vMes == 12)) {
+                vSigno = "El mes debe tener entre 1 y 31 dias";
+                document.getElementById("resultadoSigno").innerHTML = vSigno;
+            } else if ((vDia > 30 || vDia < 0) && (vMes == 4 || vMes == 6 || vMes == 9 || vMes == 11)) {
+                vSigno = "El mes debe tener entre 1 y 30 dias";
+                document.getElementById("resultadoSigno").innerHTML = vSigno;
+            } else if ((vDia > 29 || vDia < 0) && (vMes == 2)) {
+                vSigno = "El mes debe tener entre 1 y 29 dias";
+                document.getElementById("resultadoSigno").innerHTML = vSigno;
+            }else{
+                switch (vMes) {
+                    case 0:
+                        document.getElementById("resultadoSigno").innerHTML =
+                            "Error. 0 no es un mes valido, ingresa un mes entre 1 y 12"
+                        break;
+                    case 1:
+                        vSigno = (vDia <= 19) ? " Si naciste del 22.12 al 19.01 eres de signo CAPRICORNIO" :
+                            "Si naciste del 20.01 al 18.02 eres de signo ACUARIO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgAcuario"
+                        break;
+                    case 2:
+                        vSigno = (vDia <= 18) ? "Si naciste del 20.01 al 18.02 eres de signo ACUARIO" :
+                            " Si naciste del 19.02 al 20.03 eres de signo PISCIS";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgPiscis"
+                        break;
+                    case 3:
+                        vSigno = (vDia <= 20) ? " Si naciste del 19.02 al 20.03 eres de signo PISCIS" :
+                            "Si naciste del 21.03 al 19.04 eres de signo ARIES";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgAries"
+                        break;
+                    case 4:
+                        vSigno = (vDia <= 19) ? "Si naciste del 21.03 al 19.04 eres de signo ARIES" :
+                            "Si naciste del 20.04 al 20.05 eres de signo TAURO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgTauro"
+                        break;
+                    case 5:
+                        vSigno = (vDia <= 20) ? "Si naciste del 20.04 al 20.05 eres de signo TAURO" :
+                            "Si naciste del 21.05 al 20.06 eres del signo GEMINIS"
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgGeminis"
+                        break;
+                    case 6:
+                        vSigno = (vDia <= 20) ? "Si naciste del 21.05 al 20.06 eres del signo GEMINIS" :
+                            "Si naciste del 21.06 al 22.07 eres del signo CANCER";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgCancer"
+                        break;
+                    case 7:
+                        vSigno = (vDia <= 22) ? "Si naciste del 21.06 al 22.07 eres del signo CANCER" :
+                            "Si naciste del 23.07 al 22.08 eres del signo LEO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgLeo"
+                        break;
+                    case 8:
+                        vSigno = (vDia <= 22) ? "Si naciste del 23.07 al 22.08 eres del signo LEO" :
+                            "Si naciste del 23.08 al 22.09 eres de signo VIRGO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgVirgo"
+                        break;
+                    case 9:
+                        vSigno = (vDia <= 22) ? "Si naciste del 23.08 al 22.09 eres de signo VIRGO" :
+                            "Si naciste del 23.09 al 22.10 eres de signo LIBRA";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgLibra"
+                        break;
+                    case 10:
+                        vSigno = (vDia <= 22) ? "Si naciste del 23.09 al 22.10 eres de signo LIBRA" :
+                            "Si naciste del 23.10 al 21.11 eres de signo ESCORPIO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgEscorpio"
+                        break;
+                    case 11:
+                        vSigno = (vDia <= 21) ? "Si naciste del 23.10 al 21.11 eres de signo ESCORPIO" :
+                            "Si naciste del 22.11 al 21.12 eres de signo SAGITARIO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgSagitario"
+                        break;
+                    case 12:
+                        vSigno = (vDia <= 21) ? "Si naciste del 22.11 al 21.12 eres de signo SAGITARIO" :
+                            "Si naciste del 22.12 al 19.01 eres de signo CAPRICORNIO";
+                        document.getElementById("resultadoSigno").innerHTML = vSigno;
+                        vImgPath = "imgCapricornio"
+                        break;
+                    default:
+                        document.getElementById("resultadoSigno").innerHTML = "Por favor ingresa un día y mes válido";
+                        vImgPath = "imgError"
+                };
+            };
+
+            document.getElementById("imagenSigno").src = "./signos/" + vImgPath + ".jpg"
+        }
+
+        /* DUDAS: ¿Como hago si quiero que si se ingresa un dia mayor de 31 me diga error.
+                      if ( vDia == 0 || vDia > 31) { 
+                           document.getElementById("resultadoSigno").innerHTML = "Error.Por Favor inserta un día válido entre 1 y 31"
+                       }*/
+    </script>
+</body>
+
+</html>

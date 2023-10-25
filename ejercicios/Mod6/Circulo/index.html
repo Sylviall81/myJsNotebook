@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.8.2| Ej.4 Programa para crear círculos</title>
+  <style>
+  </style>
+</head>
+
+<body
+  style="background-color: whitesmoke; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+  <h1 style="color: mediumturquoise;">M.8.2| Ej.4 Programa para crear círculos</h1>
+
+
+  <details>
+    <summary><strong>Ej. 4 Instrucciones:</strong></summary>
+
+    <p>Hacer una aplicación en la que el usuario introduce las coordenadas X, Y de dos círculos y sus respectivos
+      radios.
+      <br>
+      <br>
+      A.Crear la clase Punto y la clase Círculo: <br>
+      <img src="img/UML.jpg" alt="Imagen UML de clases">
+
+      <ul>
+
+        <li>Clase Punto: <br>
+          Tendrá los ATRIBUTOS: <strong> posicion X y posicion Y. </strong> Además tendrá el constructor parametrizado
+          con todos los atributos de la clase.</li>
+
+        <li>Clase Círculo: <br>
+
+          Tendrá los ATRIBUTOS: <strong>centro (un punto) y el radio </strong> (distancia entre el centro y cualquier
+          punto de la circunferencia).
+          Además, tendrá el constructor con todos los parámetros y los siguientes <strong> siete (7) métodos: </strong>
+        </li>
+      </ul>
+
+      <ol>
+        <li> DistanciaCentros(otroCírculo) : Devuelve la distancia entre el centro del círculo actual y el recibido como
+          parámetro. <br>
+          Fórmula de distancia entre dos puntos. <br>
+          <img src="img/Formula.jpg" alt="">
+        </li>
+        <li>Equal(otroCírculo) : Devuelve true si dos círculos son iguales (si tienen el mismo centro y el mismo radio).
+        </li>
+        <li>sonConcentricos(otroCírculo) : Devuelve true si dos círculos son concéntricos (tienen igual centro).</li>
+        <li> tienenIgualRadio(otroCírculo) : Retorna true si dos círculos tienen el mismo radio.</li>
+        <li>sonTangentes(otroCírculo) : Devuelve true si dos círculos son tangentes.</li>
+        <li>sonSecantes(otroCírculo) : Devuelve true si dos círculos son secantes.</li>
+        <li>noSeTocan(otroCírculo) : Devuelve true si dos círculos no se tocan.</li>
+      </ol>
+
+      B. Finalmente, la aplicación mostrará por pantalla el resultado de realizar la llamada a todos los métodos de la
+      clase Círculo.
+      <hr>
+
+  </details>
+  <center> <img width="350" src="img/circunf.png" alt="foto de relaciones entre circunferencias"></center>
+  <center>
+    <h2>Introduzca los valores para los circulos</h2>
+  </center>
+
+ <center>
+    <table width="30%">
+
+      <tr>
+        <th width="30%" ;></th>
+        <th>Centro (x)</th>
+        <th>Centro (y)</th>
+        <th>Radio (r)</th>
+
+        <th>&nbsp;</th>
+
+      </tr>
+      <tr>
+        <td><strong>Círculo&nbsp;1</strong></td>
+        <td><input type="number" id="Xc1" value="5" style="width:70px;"></td>
+        <td><input type="number" id="Yc1" value="3" style="width:70px;"></td>
+        <td><input type="number" id="radio1" value="3" style="width:70px;"></td>
+
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>Círculo&nbsp;2</strong></td>
+        <td><input type="number" id="Xc2" value="2" style="width:70px;"></td>
+        <td><input type="number" id="Yc2" value="4" style="width:70px;"></td>
+        <td><input type="number" id="radio2" value="2" style="width:70px;"></td>
+
+        <td><button id="button" onclick="calcular()">Calcular</button>
+        </td>
+      </tr>
+    </table>
+  </center>
+    <br>
+    <br>
+    <h2 style="background-color: mediumturquoise;">Resultados:</h2>
+
+    <p>
+      Con los datos proporcionados por el/la usuario/a: <br>
+      <span id="circle1"></span>
+      <br>
+      <span id="circle2"></span>
+      <br>
+      <br>
+      podemos obtener la siguiente información: <br>
+
+      <span id="sumaRadios"></span>
+    </p>
+
+    <ol>
+      <li>Distancia entre los centros: <strong><span id="1cDistCentros"></span></strong>
+        <p> Método: fórmula de distancia entre dos puntos. <br>
+          <img src="img/Formula.jpg" alt=""></p>
+      </li>
+
+      <li>¿Son dos círculos iguales? <strong><span id="2sonIguales"></span></strong>
+        <p><em>
+            Dos círculos son iguales si tienen el mismo centro y el mismo radio.</em></p>
+      </li>
+      <li>¿Son concentricos? <strong><span id="3sonConcentricos"></span></strong>
+        <p> <em> Dos circulos son CONCENTRICOS si tienen igual centro.</em></p>
+      </li>
+      <li>¿Tienen el mismo Radio(r)? <strong><span id="4mismoRadio"></span></strong></li>
+      <br>
+      <li>¿Son Tangentes? <strong><span id="5sonTangentes"></span></strong>
+        <p> <em> Dos círculos son TANGENTES (sólo se tocan en un sólo punto)
+            si la distancia entre sus centros es igual a la suma de sus radios
+          </em></p>
+      </li>
+      <li>¿Son Secantes? <strong><span id="6sonSecantes"></span></strong>
+        <p><em> Dos círculos son SECANTES (se tocan en dos puntos)
+            cuando la distancia entre sus centros es menor que la suma de sus radios*. </em></p>
+      </li>
+      <li>¿Los círculos se tocan? <strong><span id="7seTocan"></span></strong></li>
+      <p><em> Dos círculos NO SE TOCAN si la distancia entre sus centros es mayor a la suma de sus radios*.</em></p>
+      <p style="color: darkred;"> <em>
+        *Nota: Si las circunferencias son concéntricas NO SE TOCAN (y por tanto, tampoco pueden ser secantes) <br>
+        aún cuando la distancia entre sus centros (0) sea menor que la suma de sus radios</em> </p>
+    </ol>
+    <br>
+
+
+
+    <script src="./js/punto.js"></script>
+    <script src="./js/circulo.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

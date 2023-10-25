@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4.E2-¿A que curso correspondes?</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+<body>
+    <h1>M4.E2-¿A qué curso correspondes?</h1>
+
+<p>Hola! Por favor, ingresa tu nombre y edad y el programa te dirá a que curso deberías asistir</p>
+<br>
+<p>Nombre:<input id= "nombre" type= "text" placeholder="Ingresa tu nombre aquí"> </p>
+<p>Edad:<input id= "edad" type= "number" placeholder="Ingresa tu edad"> </p>
+<br>
+<button onclick="nivelEducativo()">¿A que curso debo asistir?</button>
+<br>
+<br>
+<p id="queCurso"></p>
+
+
+    <script>
+        "use strict"
+
+        function nivelEducativo(){
+            let vEdad = parseInt(document.getElementById("edad").value)
+            let vNombre = document.getElementById("nombre").value
+            console.log(vEdad,vNombre)
+
+            if (vEdad <= 5) { document.getElementById("queCurso").innerHTML = "Hola! "+ vNombre+" tienes "+ vEdad+ " años y te corresponde ir a PREESCOLAR"} 
+            else if (vEdad >= 6 && vEdad <= 11) { document.getElementById("queCurso").innerHTML = "Hola! "+ vNombre+" tienes "+ vEdad+ " años y te corresponde ir a PRIMARIA"} 
+            else if (vEdad >= 12 && vEdad <= 15) { document.getElementById("queCurso").innerHTML = "Hola! "+ vNombre+" tienes "+ vEdad+ " años y te corresponde ir a ESO"} 
+            else if (vEdad >= 16 && vEdad <=17) { document.getElementById("queCurso").innerHTML = "Hola! "+ vNombre+" tienes "+ vEdad+ " años y te corresponde ir a BACHILLERATO"} 
+            if (vEdad >= 18) { document.getElementById("queCurso").innerHTML = "Hola! "+ vNombre+" tienes "+ vEdad+ " años, eres mayor de edad y te corresponde ir a FP o Universidad"} 
+            
+        }
+
+        //Se puede trabajar con una variable resultado para no tener q poner tooooooodo el document get element id. Meter resultado como parte de lo q se va a ejecutar
+        //let resultado= 
+
+    </script>
+</body>
+</html>

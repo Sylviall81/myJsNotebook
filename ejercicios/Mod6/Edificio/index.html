@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.8.2| Ej.4 Programa para crear edificios</title>
+  <style>
+  </style>
+</head>
+
+<body
+  style="background-color: whitesmoke; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+  <h1 style="color: mediumturquoise;">M.8.2| Ej.5 Programa para crear edificios</h1>
+
+  <details>
+    <summary><strong>Ej. 5 Instrucciones:</strong></summary>
+
+    <p> Crear una aplicación que contendrá una <strong> clase Edificio</strong> y varias clases derivadas.
+      <br>
+      <br>
+      No se instanciará ningún objeto de la clase Edificio, sino que se instanciarán objetos de las clases derivadas de
+      ésta.Todos los edificios tendrán ciertos <strong> datos comunes: </strong>
+      <ul>
+        <li>Nombre</li>
+        <li>Num. de Plantas </li>
+        <li>Superficie (m2)</li>
+      </ul>
+      Estos datos se insertan al dar de alta el edificio, no se modificarán, pero sí se tendrá que poder acceder a ellos
+      para leerlos.
+    </p>
+
+    <p>
+      Las clases derivadas son:
+      <strong> Hotel, Hospital y Cine. </strong>
+
+    </p>
+
+    <p>METODOS: </p>
+
+    <ul>
+      <li>
+
+        métodoLimpiar(): <br>
+        Mostrará por pantalla la inversion que supone limpiar el edificio tomando en cuenta los siguientes datos: <br>
+        
+        <ul><strong>
+          -TIEMPO:</strong>
+          <li>
+            Se tarda en limpiar un minuto por cada 5 m². </li>
+          <li>
+            si un edificio
+            tiene más de una planta, se tarda en subir medio minuto de una planta a otra. Por tanto, añadiremos medio
+            minuto
+            por cada planta adicional. </li>
+          <strong> -GASTO: </strong>
+          <li>
+            Por cada minuto de trabajo se pagará un euro diario. Además, como se limpia todos los
+            días, para obtener el coste mensual, deberemos multiplicar por 30 (este coste mensual también se mostrará
+            por
+            pantalla) </li>
+        </ul>
+
+      </li>
+
+      <li>
+        calcularCosteVigilancia() <br>
+        Muestra el gasto mensual en vigilancia y seguridad tomando en cuenta los siguientes datos:
+        <ul>
+          <li>
+            Contratar un vigilante tiene un coste mensual para los propietarios de 1300€. <br>
+            Excepcionalmente, los
+            vigilantes de hoteles cobran un plus de peligrosidad de 500 euros mensuales.
+          </li>
+          <li> Se considerará que cada vigilante de hotel u hospital puede vigilar 1000 m2. <br>
+            Por
+            tanto, si un edificio tiene una superficie de 5500 m², necesitaremos 6 vigilantes. <br>
+            En el caso de <strong>los cines</strong>, los
+            vigilantes pueden vigilar 3000 m². </li>
+        </ul>
+      </li>
+
+      <li> repartirAlmuerzo() <br>
+        En el hospital se reparte almuerzo entre los pacientes tres veces al día. 
+        <br>
+        Este método -cuando sea llamado-
+        mostrará el mensaje: <br>
+        <em> “Se están repartiendo xxx raciones” . </em> <br>
+        Este número puede variar a lo largo del tiempo, y, por tanto, deberá permitirse acceder al atributo
+        correspondiente, tanto
+        para leerlo como para modificarlo, aunque no se haga directamente.
+      </li>
+
+      <li>
+        proyectarSessio() <br>
+        Se trata de un método especifico para la clase cine y este mostrará el mensaje:
+        <em>
+          “Se han recaudado xxx.xx euros” </em> <br>
+        A tener en cuenta: <br>
+        <br>
+        Para calcular la recaudación, debe multiplicarse el precio de una entrada por el número
+        de asistentes a la sesión, que no podrá superar el aforo máximo.
+        Por tanto, la función proyectarSesión deberá recibir
+        como parámetros el número de asistentes y el precio de la entrada por aquella sesión.
+        El número de asistentes a la sesión no puede ser mayor que el aforo total de la sala.
+      </li>
+
+      <li>servicioHabitaciones()
+        En los hoteles todos los días pasa el servicio de habitaciones. Se calcula que cada miembro del servicio puede
+        atender a 20 habitaciones. Se creará un método que calcule, y muestre por pantalla: a) Cuántas personas son
+        necesarias para atender el servicio de habitaciones el hotel. b) ¿Cuál es el total necesario para los sueldos de
+        estas personas, teniendo en cuenta que cada persona cobra 1.000 euros al mes?
+
+      </li>
+
+    </ul>
+
+    Ejemplos:
+    El Hospital de Vilafranca, de 1.950 m² y 2 plantas. En ese momento tiene 26 enfermos.
+    El Hospital General de Catalunya, de 25.350 m² y 10 plantas. En ese momento tiene 315 enfermos.
+    El “Cine Montecarlo”, de 3180 m² y 1 planta.
+    El “Cine Principal”, de 12.450 m² y 2 plantas.
+    El Hotel Hilton, de 73.858 m² y 22 plantas. Tiene 583 habitaciones. El Hotel Pepita, de 593 m² y 3 plantas.
+    Tiene 12 habitaciones.
+
+    <h2> OBJETIVO FINAL: </h2>
+
+    La aplicación debe poder: <strong> dar de alta, mostrar y eliminar edificios.</strong>
+    Al llamar al método mostrar, llamaremos a TODOS los métodos del edificio en cuestión para ver todos sus datos por
+    pantalla.
+    <hr>
+  </details>
+
+  <center>
+
+    <h2>Bienvenid@ al Registro Municipal de Edificaciones de Barcelona</h2>
+
+    <center> <img width="450" src="img/Edificios.png" alt="Imagenes de edificios comerciales de Barcelona"></center>
+
+    <p>Por favor, inserta el nombre del edificio que deseas buscar y a continuación presiona el botón correspondiente
+      <br>
+      para añadirlo, eliminarlo o simplemente consultar su información </p>
+  </center>
+  <br>
+  <center>
+    <p> Nombre: <input id="nombreEdificio" size="65" type="text" placeholder="Hospital Clinic"> </p>
+    <br>
+
+    <button onclick="crear()">Dar de Alta Edificio</button>
+    <button onclick="mostrar()">Mostrar Edificio</button>
+    <button onclick="eliminar()">Eliminar Edificio</button>
+    
+
+  </center>
+
+
+<p id ="datos"></p>
+
+
+
+  <script>
+    "use strict"
+  </script>
+  <script src="./js/edificio.js"></script>
+  <script src="./js/hotel.js"></script>
+  <script src="./js/hospital.js"></script>
+  <script src="./js/cine.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

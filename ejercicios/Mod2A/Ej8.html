@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4.EXTRA 3: Piedra, Papel y Tijera</title>
+    <style>
+        body {font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, Helvetica; margin: 0 auto; padding: 0 15em 5em 5em;}
+        h1{color:#106CF6; font-size: 115%;}
+        p {margin:0; line-height: 1.5;}
+        span {display: inline-block; width: 15em;}
+     </style>
+</head>
+<body>
+
+    <h1>M4.EXTRA 3: Piedra, Papel y Tijera </h1>
+
+
+    <p> Juguemos junt@s Piedra, Papel o Tijera.</p>
+
+<p> Escoge un número:
+    1.Piedra | 2.Papel | 3.Tijera <br>
+  <!--- Número :  <input id = "InputUser" type="number">-->
+ <select id="InputUser">
+    <option value="1">01.Piedra</option>
+    <option value="2">02.Papel</option>
+    <option value="3">03.Tijera</option>
+ </p>
+    
+</select>
+    
+    <p> Ahora haz click!</p>
+
+    <button onclick="jugarPpt()">JUGAR!</button>
+
+
+    <p id="resultado"></p>
+
+    <img src="PiedraPapelTijera.jpg" alt="gráfico con los iconos de piedra papel y tijera">
+
+
+    <script>
+"use strict"
+
+function jugarPpt(){
+
+    let numRandom = Math.floor((Math.random() * (4 - 1)) + 1);
+    let numUsuario = Number(document.getElementById("InputUser").value);
+    console.log ( " Usuario: "+numUsuario+ " ordenador: "+ numRandom)
+
+    let vPiedra = "PIEDRA";
+    let vTijera = "TIJERA";
+    let vPapel = "PAPEL";
+  let vMensaje = " ";
+
+    if (numUsuario < 1 || numUsuario > 3) {
+        alert("Debes introducir un número positivo entre 1 y 3. si no, no podremos jugar")
+    }
+
+
+
+    //Switch 
+
+     //Ella hizo todas las combinaciones de empate , todas las  ganar y todas las de perder
+
+     /*
+     if == 11 y 11 y 33 {empataste}
+     else if 13 2 1 y 3 2 {ganaste}
+     else { perdiste }
+     */
+
+   // Rita hace switch con operador ternario ver captura de pantala!!
+
+
+    if ( numRandom == 1 && numUsuario == 2){
+vMensaje = " Yo "+vPiedra+" y Tu "+ vPapel+" Enhorabuena, has ganado! ";
+    }
+    if ( numRandom == 1 && numUsuario == 3){
+vMensaje = " Yo "+vPiedra+" y Tu "+ vTijera+" Esta vez, yo he ganado!  ";
+    }
+    if ( numRandom == 2 && numUsuario == 1){
+vMensaje = " Yo "+vPapel+" y Tu "+ vPiedra+" Esta vez, yo he ganado!  ";
+    }
+    if ( numRandom == 2 && numUsuario == 3){
+vMensaje = " Yo "+vPapel+" y Tu "+ vTijera+"  Enhorabuena, has ganado! ";
+    }
+    if ( numRandom == 3 && numUsuario == 1){
+vMensaje = " Yo "+vTijera+" y Tu "+ vPiedra+"  Enhorabuena, has ganado! ";
+    }
+    if ( numRandom == 3 && numUsuario == 2){
+vMensaje = " Yo "+vTijera+" y Tu "+ vPapel+"  Esta vez, yo he ganado! ";
+    }
+
+if (numRandom == numUsuario) {
+    if (numRandom ==1){
+    vMensaje = "Vaya! " +" Tu: "+vPiedra +" y yo: "+vPiedra+ " Tenemos un empate, volvamos a jugar"
+    };
+    if (numRandom ==2){
+    vMensaje = "Vaya! " +" Tu: "+vPapel +" y yo: "+vPapel+ " Tenemos un empate, volvamos a jugar"
+    };
+    if (numRandom ==3){
+    vMensaje = "Vaya! " +" Tu: "+vTijera +" y yo: "+vTijera+ " Tenemos un empate, volvamos a jugar"
+    };
+
+    
+}
+
+document.getElementById("resultado").innerHTML = vMensaje;
+
+}
+
+    </script>
+</body>
+</html>

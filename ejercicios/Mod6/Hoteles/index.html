@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: darkred;">M.8.2| Ej.2 Programa para crear hoteles.</title>
+</head>
+
+<body
+    style="background-color: whitesmoke; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <h1 style="color: darkred;">M.8.2| Ej.2 Programa para crear hoteles.</h1>
+
+    <details>
+        <summary>Ej.2 Instrucciones:</summary>
+
+        <p> Crear una aplicación para dar de alta, modificar, ver y eliminar hoteles. <br>
+            <br>
+
+            1. Crear una clase Hotel:
+
+            <ul>
+                <li> Atributos: nombre, número de habitaciones, número de plantas y superficie total del hotel.
+                </li>
+                <li>
+                    Metodos: Getters y setters de todos los atributos + EXTRA: método calcularMantenimiento().
+                    <br>
+                    <br>
+                    <strong> Especificaciones del método: </strong><br>
+                    El método debe mostrar cuántas personas son necesarias para atender el servicio de
+                    habitaciones del hotel y el coste total de este servicio. <br>
+                    Datos adicionales: <br>
+                    1 trabajador atiende 20 hab. y cobra 1.500€ al mes.
+                </li>
+            </ul>
+
+            2. Desarrollar funciones (CRUD):
+            <br>
+            <ul>
+                <li>
+                    La función crear Hotel(): <br>
+                    pide datos: de nombre, número de
+                    habitaciones, número de plantas y superficie total del hotel (o deberá recibir estos datos por
+                    parámetro). <br>
+                    Añadir el objeto de la clase y añadirlo a un array de hoteles.
+                </li>
+
+                <li>
+                    La función darDeBaixaHotel(): <br>
+                    deberá recibir el nombre del hotel que se quiere dar de baja. El usuario/a
+                    introducirá el nombre del hotel y si el hotel está dentro del array, lo eliminaremos y mostraremos
+                    un mensaje
+                    por pantalla informando al usuario/a que hemos eliminado el hotel. Si no hemos encontrado el hotel
+                    dentro del
+                    array, avisaremos al usuario diciendo que el hotel no estaba dentro de nuestra aplicación.
+                </li>
+                <li>
+                    La función verHotel() <br>
+                    deberá recibir el nombre del hotel que quiere que mostramos por pantalla, si el hotel está
+                    en nuestra aplicación, le mostraremos el hotel, si no está, informaremos al usuario diciendo que el
+                    hotel que
+                    nos ha pedido no está dentro de nuestra aplicación.
+                    Cuando mostramos el hotel, además, que mostrar el número de habitaciones, número de plantas y
+                    superficie total
+                    del hotel también se llamará al método calcularMantenimiento() .
+                </li>
+                <li>
+                    La función modificarHotel() <br>
+                    deberá recibir el nombre del hotel que queremos modificar. El usuario/a introducirá
+                    el nombre del hotel. Si lo tenemos en la aplicación, le preguntaremos si desea modificar el número
+                    de
+                    habitaciones, el número de plantas o la superficie total del hotel. Haremos la modificación
+                    pertinente y
+                    avisaremos al usuario de que la modificación se ha realizado.
+                </li>
+
+            </ul>
+        </p>
+    </details>
+    <center>
+        <h2>Bienvenid@ a HotelFinder</h2>
+
+       <center> <img width= "450" src="img/HotelFinder.png" alt="Imagenes de hoteles: recepción, habitacion y fachada."></center>
+
+        <p>Somos una aplicación para agencias de viajes y viajer@s. <br>
+            Nos encargamos de ayudarte a organizar los hoteles de la zona y <br>
+            brindarte toda la información necesaria para planificar tus viajes y escapadas.</p>
+
+        <p>Por favor, inserta el nombre del hotel de tu interés, y a continuación presiona el botón correspondiente <br>
+            para añadirlo, modificarlo, eliminarlo o simplemente consultar su información </p>
+    </center>
+    <br>
+    <center>
+        <p> Hotel: <input id="nombreHotel" size="65" type="text" placeholder="Hotel Plaza"> </p>
+        <br>
+
+        <button onclick="añadirHotel()">Añadir Hotel</button>
+
+        <button onclick="verHotel()"> Mostrar Hotel</button>
+
+        <button onclick="changeHotel()">Modificar Hotel</button>
+
+        <button onclick="darDeBajaHotel()">Eliminar Hotel</button>
+
+        
+
+    </center>
+
+    <center>
+        <p id="respuesta"></p>
+    
+    </center>
+
+
+    <script>
+        "use strict"
+    </script>
+    <script src="js/Hotel.js"></script>
+    <script src="js/hotelesdb.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
